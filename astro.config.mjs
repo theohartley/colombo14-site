@@ -6,11 +6,12 @@ import { defineConfig, fontProviders } from 'astro/config';
 import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
 import keystatic from '@keystatic/astro';
+import vercel from '@astrojs/vercel'; // <-- ADDED THIS
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://colombo14.com', // Updated to your actual domain!
-    output: 'static', // <-- ADDED THIS: Forces Astro to build an ultra-fast static site
+    site: 'https://colombo14.com',
+    adapter: vercel(), // <-- ADDED THIS
     integrations: [mdx(), sitemap(), react(), markdoc(), keystatic()],
     fonts: [
         {
