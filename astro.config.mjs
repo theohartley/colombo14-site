@@ -1,17 +1,17 @@
 // @ts-check
-
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
 
 import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
-import keystatic from '@keystatic/astro'; // <-- ADDED THIS LINE
+import keystatic from '@keystatic/astro';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://example.com', // We will change this to colombo14.com later!
-    integrations: [mdx(), sitemap(), react(), markdoc(), keystatic()], // <-- ADDED keystatic() HERE
+    site: 'https://colombo14.com', // Updated to your actual domain!
+    output: 'static', // <-- ADDED THIS: Forces Astro to build an ultra-fast static site
+    integrations: [mdx(), sitemap(), react(), markdoc(), keystatic()],
     fonts: [
         {
             provider: fontProviders.local(),
